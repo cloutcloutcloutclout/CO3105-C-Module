@@ -1,43 +1,33 @@
+/*
+fibonacci, index we want is the input
+calc fibonacci, then return index of that fibonacci
+*/
 #include <iostream>
 using namespace std;
 
-void printsort(int a[], int n)
+int fibonacci(int target)
 {
-    for (int z = 0; z < n; z++)
-    {
-        cout << a[z] << " ";
-    }
 
-    cout << endl;
-}
-void sort(int a[], int n)
-{
-    for (int i = 0; i <= n - 1; i++)
+    int prevY = 1, prevX = 0;
+    int current;
+
+    for (int i = 2; i <= target; i++)
     {
-        for (int j = 0; j <= n - i - 1; j++)
-        {
-            if (a[j] > a[j + 1])
-            {
-                swap(a[j], a[j + 1]);
-                printsort(a, n);
-            }
-        }
+        current = prevY + prevX;
+        prevX = prevY;
+        prevY = current;
     }
+    return current;
 }
 
 int main()
 {
+    int target;
+    cin >> target;
 
-    // read length
-    int n;
-    cin >> n;
+    int a[] = {};
 
-    int a[n]; // not strictly speaking legal but probably will do
-    // int* a = new int[n]; // if not use this one which we will explain next week
+    cout << fibonacci(target) << endl;
 
-    // read the n numbers of the array a
-    for (int i = 0; i < n; i++)
-        cin >> a[i];
-
-    sort(a, n);
+    return 0;
 }
