@@ -1,47 +1,30 @@
-#include <iostream>
-
-using namespace std;
-
-int fibonacci(int n)
+class Solution
 {
-    // Complete the function.
-    int curr;
-    int a[n] = {0, 1};
-    int x = a[0];
-    int y = a[1];
-
-    if (n == 0)
+public:
+    bool isHappy(int n)
     {
-        return 0;
-    }
-    if (n == 1)
-    {
-        return 1;
-    }
+        // algorithm cycle
+        int slow = n;
+        int fast = findInt(n); // finna use a func
 
-    for (int i = 2; i <= n; i++)
-    {
-
-        a[i] = x + y;
-
-        // swapping
-        int temp_change = x + y;
-        x = y;
-        y = temp_change;
-
-        if (i == n)
+        while (fast != 1 && slow != fast)
         {
-            curr = a[i];
+            slow = findInt(slow);
+            fast = findInt(findInt(fast));
         }
+
+        return fast == 1;
     }
 
-    return curr;
-}
-
-int main()
-{
-    int n;
-    cin >> n;
-    cout << fibonacci(n);
-    return 0;
-}
+    int findInt(int n)
+    {
+        int sum = 0;
+        while (n > 0)
+        {
+            int digit = n % 10;
+            sum += digit * digit;
+            n /= 10;
+        }
+        return sum;
+    }
+};
