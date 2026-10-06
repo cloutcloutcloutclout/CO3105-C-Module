@@ -1,33 +1,47 @@
-/*
-fibonacci, index we want is the input
-calc fibonacci, then return index of that fibonacci
-*/
 #include <iostream>
+
 using namespace std;
 
-int fibonacci(int target)
+int fibonacci(int n)
 {
+    // Complete the function.
+    int curr;
+    int a[n] = {0, 1};
+    int x = a[0];
+    int y = a[1];
 
-    int prevY = 1, prevX = 0;
-    int current;
-
-    for (int i = 2; i <= target; i++)
+    if (n == 0)
     {
-        current = prevY + prevX;
-        prevX = prevY;
-        prevY = current;
+        return 0;
     }
-    return current;
+    if (n == 1)
+    {
+        return 1;
+    }
+
+    for (int i = 2; i <= n; i++)
+    {
+
+        a[i] = x + y;
+
+        // swapping
+        int temp_change = x + y;
+        x = y;
+        y = temp_change;
+
+        if (i == n)
+        {
+            curr = a[i];
+        }
+    }
+
+    return curr;
 }
 
 int main()
 {
-    int target;
-    cin >> target;
-
-    int a[] = {};
-
-    cout << fibonacci(target) << endl;
-
+    int n;
+    cin >> n;
+    cout << fibonacci(n);
     return 0;
 }
