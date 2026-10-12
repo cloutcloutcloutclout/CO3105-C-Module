@@ -3,22 +3,12 @@ using namespace std;
 
 int main() {
 
-	return 0;
+	int* p;
+	p = new int[10];
+	p[0] = 999;
+	cout << p[0] << endl;
+	delete [] p;
+
 }
 
-/*
 
-1)
-2) Compile error vscode
-
-a. 
-
-
-
-
-
-
-
-
-
-*/
