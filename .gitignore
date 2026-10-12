@@ -1,3 +1,6 @@
 main.exe
 launch.json
 a.exe
+.vscode/tasks.json
+main
+a.exe
