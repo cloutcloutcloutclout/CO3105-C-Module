@@ -1,14 +1,22 @@
 #include <iostream>
 using namespace std;
 
+
+
+struct Employee {
+	string fname;
+	string lname;
+	int age;
+	double hwage;
+};
+
+
 int main() {
 
-	int* p;
-	p = new int[10];
-	p[0] = 999;
-	cout << p[0] << endl;
-	delete [] p;
-
+	Employee anEmployee;
+	anEmployee.age = 33;
+	cout << anEmployee.age << endl;
+	
+	return 0;
 }
-
 
