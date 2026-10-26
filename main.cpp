@@ -13,4 +13,6 @@ int main()
 	p[0] = 999;
 	cout << p[0] << endl;
 	delete[] p;
+
+	// test
 }
