@@ -68,6 +68,9 @@ void insert_after(Node* location, int t) {
 // remove head from the list
 void remove_head(Node*& head) {
 	// IMPLEMENT ME
+	Node* tmp = head;
+	head = head->next;
+	delete tmp;
 }
 
 // remove the NEXT integer i.e. AFTER the one pointed to by "location",
