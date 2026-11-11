@@ -117,8 +117,7 @@ DynArray &DynArray::copy(const DynArray &other)
 
 		for (int i = 0; i < size_; i++)
 		{
-
-			// other array i = og array i
+			// copying
 			array_[i] = other.array_[i];
 		}
 	}
